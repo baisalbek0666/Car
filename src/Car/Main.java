@@ -1,4 +1,4 @@
-import Car.Car;
+package Car;
 
 import java.time.LocalDate;
 
@@ -23,13 +23,25 @@ public class Main {
 
         Car[] cars = new Car[]{
               new Car(1L,"Mercedes","Luparik","white",12000, LocalDate.of(2002,1,21),2.5),
-              new Car(1L,"BMW","34","black",9800, LocalDate.of(1995,3,2),1.8)
+              new Car(2L,"BMW","34","black",9800, LocalDate.of(1995,3,2),1.8)
         };
+        AutoSalon autoSalon = new AutoSalon(1L,"Baisalbek",cars);
+
+        autoSalon.AddCar(new Car(3L,"KIA","K5","blue",20000,LocalDate.of(2020,12,3),2.2));
+        autoSalon.AllCar();
+        System.out.println();
+        System.out.println(autoSalon.CarFindBYId(2L));
+        autoSalon.deleteCarId(3L);
+        System.out.println();
+        autoSalon.AllCar();
+        autoSalon.updateCarId(2L,new Car(2L,"Hyundai","Sanata","white",15000,LocalDate.of(2022,1,21),2.5));
+        System.out.println("Update method");
+        autoSalon.AllCar();
 
 
-
-
-
+        autoSalon.updateCarModelBYId(6L,"Toyota");
+        System.out.println("Update method");
+        autoSalon.AllCar();
 
     }
 }
